@@ -1,0 +1,16 @@
+{
+  "displayName": "Texel — AI PDF-Centric LaTeX Editor",
+  "description": "Lightweight PDF-centric AI LaTeX workspace inside VS Code: draw boxes on compiled PDFs, map via SyncTeX, revise with AI, and review typeset before/after diffs.",
+  "untrustedWorkspaces.description": "In untrusted workspaces Texel only shows an existing PDF. Compiling LaTeX, running AI revisions, and loading workspace skills from .texel/skills require a trusted workspace.",
+  "command.openPreview": "Texel: Open PDF Annotator & AI Workspace",
+  "command.compileAndPreview": "Texel: Compile LaTeX & Open PDF Workspace",
+  "command.setApiKey": "Texel: Set API Key (Secure Storage)",
+  "config.language.description": "Interface language for the Texel PDF workspace: auto (follow VS Code language), en (English), or zh-CN (Simplified Chinese).",
+  "config.aiProvider.description": "AI backend used for LaTeX revisions: vscode-lm (IDE built-in / Copilot), openai-compatible (HTTP API), or cli (local agent CLI).",
+  "config.apiBaseUrl.description": "Base URL for OpenAI-compatible API requests (when texel.aiProvider is openai-compatible).",
+  "config.apiKey.description": "API key for OpenAI-compatible API requests (when texel.aiProvider is openai-compatible).",
+  "config.apiKey.deprecation": "Use command **Texel: Set API Key (Secure Storage)** instead to store your key in VS Code SecretStorage.",
+  "config.model.description": "Model name for openai-compatible or preferred family hint for vscode-lm.",
+  "config.cliCommand.description": "Local CLI agent command to pipe prompts to (when texel.aiProvider is cli).",
+  "config.texBinPath.description": "Directory containing latexmk, synctex, and latexdiff binaries (put first on PATH if it exists)."
+}

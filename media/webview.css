@@ -1,0 +1,421 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--vscode-editor-background);
+  color: var(--vscode-editor-foreground);
+  font-family: var(--vscode-font-family);
+  font-size: var(--vscode-font-size);
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--vscode-panel-border);
+  background: var(--vscode-editorGroupHeader-tabsBackground);
+  flex-shrink: 0;
+}
+
+.toolbar-group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.divider {
+  width: 1px;
+  height: 18px;
+  background: var(--vscode-panel-border);
+  margin: 0 2px;
+}
+
+button {
+  background: var(--vscode-button-secondaryBackground);
+  color: var(--vscode-button-secondaryForeground);
+  border: 1px solid transparent;
+  padding: 4px 9px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+button:hover:not(:disabled) {
+  background: var(--vscode-button-secondaryHoverBackground);
+}
+
+button.primary {
+  background: var(--vscode-button-background);
+  color: var(--vscode-button-foreground);
+}
+
+button.primary:hover:not(:disabled) {
+  background: var(--vscode-button-hoverBackground);
+}
+
+button.active {
+  border-color: var(--vscode-focusBorder);
+  background: var(--vscode-list-activeSelectionBackground);
+  color: var(--vscode-list-activeSelectionForeground);
+}
+
+button.danger {
+  background: var(--vscode-inputValidation-errorBackground);
+  border-color: var(--vscode-inputValidation-errorBorder);
+  color: var(--vscode-editor-foreground);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.color-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  padding: 0;
+  border: 2px solid transparent;
+}
+
+.color-dot.active {
+  border-color: var(--vscode-editor-foreground);
+  transform: scale(1.1);
+}
+
+.color-red { background: #ef4444; }
+.color-blue { background: #3b82f6; }
+.color-green { background: #22c55e; }
+.color-amber { background: #f59e0b; }
+
+.status-pill {
+  margin-left: auto;
+  font-size: 11px;
+  opacity: 0.85;
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.workspace {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.pdf-pane {
+  flex: 1;
+  min-width: 0;
+  overflow: auto;
+  padding: 16px;
+  background: var(--vscode-sideBar-background);
+}
+
+.pdf-columns {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.pdf-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.column-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.75;
+}
+
+.page-wrapper {
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.28);
+  background: #ffffff;
+  user-select: none;
+}
+
+.page-wrapper canvas {
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  cursor: crosshair;
+}
+
+.box-rect {
+  position: absolute;
+  border: 2px solid;
+  border-radius: 2px;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.box-rect.color-red { border-color: #ef4444; background: rgba(239, 68, 68, 0.14); }
+.box-rect.color-blue { border-color: #3b82f6; background: rgba(59, 130, 246, 0.14); }
+.box-rect.color-green { border-color: #22c55e; background: rgba(34, 197, 94, 0.14); }
+.box-rect.color-amber { border-color: #f59e0b; background: rgba(245, 158, 11, 0.14); }
+
+.box-badge {
+  position: absolute;
+  top: -18px;
+  left: -2px;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 1px 5px;
+  border-radius: 2px;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.sidebar {
+  width: 340px;
+  flex-shrink: 0;
+  border-left: 1px solid var(--vscode-panel-border);
+  background: var(--vscode-editor-background);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.sidebar-section {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--vscode-panel-border);
+}
+
+.sidebar-title {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.75;
+  margin-bottom: 8px;
+}
+
+.sidebar-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card {
+  border: 1px solid var(--vscode-panel-border);
+  border-radius: 4px;
+  padding: 8px;
+  background: var(--vscode-sideBar-background);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 11px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 600;
+}
+
+.tag-swatch {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.snippet-preview {
+  margin: 0;
+  padding: 6px;
+  font-family: var(--vscode-editor-font-family);
+  font-size: 11px;
+  background: var(--vscode-editor-background);
+  border: 1px solid var(--vscode-panel-border);
+  border-radius: 3px;
+  max-height: 110px;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+textarea,
+input[type='text'] {
+  width: 100%;
+  background: var(--vscode-input-background);
+  color: var(--vscode-input-foreground);
+  border: 1px solid var(--vscode-input-border, transparent);
+  border-radius: 3px;
+  padding: 6px 8px;
+  font-family: var(--vscode-font-family);
+  font-size: 12px;
+  resize: vertical;
+}
+
+textarea:focus,
+input[type='text']:focus {
+  outline: 1px solid var(--vscode-focusBorder);
+}
+
+.skill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.action-row {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.empty-hint {
+  font-size: 12px;
+  opacity: 0.72;
+  line-height: 1.5;
+  padding: 8px 2px;
+}
+
+.error-banner {
+  padding: 8px 10px;
+  border-radius: 3px;
+  font-size: 12px;
+  background: var(--vscode-inputValidation-errorBackground);
+  border: 1px solid var(--vscode-inputValidation-errorBorder);
+  white-space: pre-wrap;
+}
+
+.zoom-label {
+  font-size: 12px;
+  min-width: 38px;
+  text-align: center;
+}
+
+/* pdf.js text layer (subset of pdf_viewer.css) for the Text tool */
+.textLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  overflow: hidden;
+  line-height: 1;
+  text-align: initial;
+  transform-origin: 0 0;
+  -webkit-text-size-adjust: none;
+  /* Override .page-wrapper's user-select: none so printed text can be highlighted. */
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+.textLayer span,
+.textLayer br {
+  color: transparent;
+  position: absolute;
+  white-space: pre;
+  cursor: text;
+  transform-origin: 0% 0%;
+}
+
+.textLayer span.markedContent {
+  top: 0;
+  height: 0;
+}
+
+.textLayer ::selection {
+  background: rgba(59, 130, 246, 0.35);
+}
+
+.textLayer br::selection {
+  background: transparent;
+}
+
+.overlay.passthrough {
+  pointer-events: none;
+}
+
+.overlay.passthrough .box-rect {
+  pointer-events: auto;
+}
+
+.box-rect.text-mark {
+  border-width: 0 0 2px 0;
+  border-radius: 0;
+}
+
+.mark-btn {
+  position: fixed;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.quote {
+  font-size: 12px;
+  font-style: italic;
+  opacity: 0.85;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.review-section {
+  max-height: 48%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.explanation {
+  font-size: 12px;
+}
+
+.decision-row {
+  margin-top: 0;
+}
+
+.card.decision-accept {
+  border-color: #22c55e;
+}
+
+.card.decision-reject {
+  opacity: 0.6;
+  border-color: var(--vscode-inputValidation-errorBorder);
+}
+
+.review-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}

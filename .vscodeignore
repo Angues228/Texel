@@ -1,0 +1,15 @@
+.vscode/**
+.vscode-test/**
+src/**
+examples/**
+.gitignore
+tsconfig.json
+**/*.map
+**/*.ts
+.github/**
+*.vsix
+README.zh-CN.md
+out/test/**
+node_modules/**
+!node_modules/pdfjs-dist/legacy/build/pdf.min.js
+!node_modules/pdfjs-dist/legacy/build/pdf.worker.min.js

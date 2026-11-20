@@ -1,0 +1,139 @@
+{
+  "name": "texel",
+  "displayName": "%displayName%",
+  "description": "%description%",
+  "version": "0.1.0",
+  "publisher": "Angues",
+  "author": "Ricky",
+  "license": "MIT",
+  "icon": "media/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Angues228/Texel.git"
+  },
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other",
+    "Visualization"
+  ],
+  "keywords": [
+    "latex",
+    "pdf",
+    "synctex",
+    "latexdiff",
+    "ai"
+  ],
+  "activationEvents": [
+    "onLanguage:latex",
+    "onLanguage:tex"
+  ],
+  "main": "./out/extension.js",
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": "limited",
+      "description": "%untrustedWorkspaces.description%"
+    }
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "texel.openPreview",
+        "title": "%command.openPreview%",
+        "icon": "$(preview)"
+      },
+      {
+        "command": "texel.compileAndPreview",
+        "title": "%command.compileAndPreview%",
+        "icon": {
+          "light": "media/texel-action-light.svg",
+          "dark": "media/texel-action-dark.svg"
+        }
+      },
+      {
+        "command": "texel.setApiKey",
+        "title": "%command.setApiKey%"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "texel.compileAndPreview",
+          "when": "resourceExtname == .tex || editorLangId == latex || editorLangId == tex",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Texel",
+      "properties": {
+        "texel.language": {
+          "type": "string",
+          "enum": [
+            "auto",
+            "en",
+            "zh-CN"
+          ],
+          "default": "auto",
+          "description": "%config.language.description%"
+        },
+        "texel.aiProvider": {
+          "type": "string",
+          "enum": [
+            "vscode-lm",
+            "openai-compatible",
+            "cli"
+          ],
+          "default": "vscode-lm",
+          "description": "%config.aiProvider.description%"
+        },
+        "texel.apiBaseUrl": {
+          "type": "string",
+          "default": "https://api.openai.com/v1",
+          "description": "%config.apiBaseUrl.description%",
+          "scope": "machine"
+        },
+        "texel.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "%config.apiKey.description%",
+          "markdownDeprecationMessage": "%config.apiKey.deprecation%"
+        },
+        "texel.model": {
+          "type": "string",
+          "default": "gpt-4o-mini",
+          "description": "%config.model.description%"
+        },
+        "texel.cliCommand": {
+          "type": "string",
+          "default": "claude -p",
+          "description": "%config.cliCommand.description%",
+          "scope": "machine"
+        },
+        "texel.texBinPath": {
+          "type": "string",
+          "default": "/Library/TeX/texbin",
+          "description": "%config.texBinPath.description%",
+          "scope": "machine"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "test": "npm run compile && node --test out/test/unit.test.js",
+    "test:integration": "npm run compile && node --test out/test/integration.test.js"
+  },
+  "dependencies": {
+    "pdfjs-dist": "^3.11.174"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.90.0",
+    "@vscode/vsce": "^2.26.0",
+    "typescript": "^5.4.0"
+  }
+}

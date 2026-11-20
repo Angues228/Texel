@@ -1,0 +1,16 @@
+{
+  "displayName": "Texel — AI PDF 优先 LaTeX 编辑器",
+  "description": "VS Code 内的轻量级 PDF 优先 AI LaTeX 工作区：在编译后的 PDF 上框选或划词，通过 SyncTeX 定位源码，使用 AI 改写并审阅排版级前后 Diff。",
+  "untrustedWorkspaces.description": "在不受信任的工作区中，Texel 仅显示已有的 PDF。编译 LaTeX、运行 AI 改写以及加载 .texel/skills 自定义技能均需要受信任的工作区。",
+  "command.openPreview": "Texel: 打开 PDF 批注与 AI 工作区",
+  "command.compileAndPreview": "Texel: 编译 LaTeX 并打开 PDF 工作区",
+  "command.setApiKey": "Texel: 设置 API Key（安全存储）",
+  "config.language.description": "Texel PDF 工作区的界面语言：auto（自动跟随 VS Code 语言）、en（英文）或 zh-CN（简体中文）。",
+  "config.aiProvider.description": "用于 LaTeX 改写的 AI 后端：vscode-lm（IDE 内置模型 / Copilot）、openai-compatible（OpenAI 兼容 HTTP 接口）或 cli（本地 CLI 智能体）。",
+  "config.apiBaseUrl.description": "OpenAI 兼容接口的 Base URL（当 texel.aiProvider 为 openai-compatible 时生效）。",
+  "config.apiKey.description": "OpenAI 兼容接口的 API Key（当 texel.aiProvider 为 openai-compatible 时生效）。",
+  "config.apiKey.deprecation": "请改用命令 **Texel: 设置 API Key（安全存储）** 将密钥保存在 VS Code SecretStorage 中。",
+  "config.model.description": "openai-compatible 的模型名称，或 vscode-lm 的偏好模型族提示。",
+  "config.cliCommand.description": "接收标准输入提示词的本地 CLI 命令（当 texel.aiProvider 为 cli 时生效）。",
+  "config.texBinPath.description": "包含 latexmk、synctex、latexdiff 的目录路径（存在时会优先置于 PATH 前端）。"
+}
