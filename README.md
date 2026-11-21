@@ -239,12 +239,6 @@ Open this repository in VS Code and press **`F5`** to launch an Extension Develo
 
 ---
 
-## 📈 Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=Angues228/Texel&type=Date)](https://star-history.com/#Angues228/Texel&Date)
-
----
-
 ## 📄 License
 
 Released under the [MIT License](LICENSE). Third-party license notices for bundled `pdf.js` files are in [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).

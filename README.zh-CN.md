@@ -242,12 +242,6 @@ npx @vscode/vsce package  # 打包本地 .vsix 安装包
 
 ---
 
-## 📈 Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=Angues228/Texel&type=Date)](https://star-history.com/#Angues228/Texel&Date)
-
----
-
 ## 📄 开源协议
 
 本项目基于 [MIT License](LICENSE) 开源。随包分发的 `pdf.js` 许可信息见 [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md)。
