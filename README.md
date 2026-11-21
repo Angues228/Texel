@@ -62,11 +62,22 @@ Make sure `latexmk`, `synctex`, and `latexdiff` are available on your machine:
 
 ### 2. Install Texel (Choose One)
 
-- **Option A: Install from `.vsix` (Recommended)**
-  1. Download the latest `texel-*.vsix` from **[GitHub Releases](https://github.com/Angues228/Texel/releases)**.
-  2. Open VS Code → **Extensions** sidebar → click the top-right `...` menu → **`Install from VSIX...`** and select the file.
+- **Option A: Install from VS Code Marketplace (Recommended ⚡)**
+  - Open the **Extensions** sidebar in VS Code (`Cmd+Shift+X` / `Ctrl+Shift+X`) and search for **`Texel`**.
+  - Or press `Cmd+P` / `Ctrl+P` in VS Code and run:
+    ```text
+    ext install Angues.texel
+    ```
+  - Or from your terminal:
+    ```bash
+    code --install-extension Angues.texel
+    ```
 
-- **Option B: Build or Run from Source (Developers)**
+- **Option B: Install Pre-built `.vsix` (GitHub Releases)**
+  1. Download the latest `texel-v*.vsix` from **[GitHub Releases](https://github.com/Angues228/Texel/releases)**.
+  2. Open VS Code → **Extensions** sidebar → click the top-right `...` menu → **`Install from VSIX...`** and select the downloaded file.
+
+- **Option C: Build or Run from Source (Developers)**
   ```bash
   git clone https://github.com/Angues228/Texel.git
   cd Texel

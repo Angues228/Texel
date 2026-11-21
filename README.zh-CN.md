@@ -60,13 +60,24 @@ PDF 上框选/划词标注 ──▶ SyncTeX 自动定位源码块 ──▶ AI 
 
 ---
 
-### 2. 安装插件（二选一）
+### 2. 安装插件（三种方式任选其一）
 
-- **方式 A：安装打包好的 `.vsix`（推荐给普通用户）**
-  1. 前往本仓库右侧 **[Releases](https://github.com/Angues228/Texel/releases)** 页面下载最新的 `texel-*.vsix` 文件。
+- **方式 A：通过 VS Code 插件市场直接安装（最便捷 ⚡）**
+  - 在 VS Code 左侧打开 **扩展** 面板（`Cmd+Shift+X` / `Ctrl+Shift+X`），直接搜索 **`Texel`** 点击安装。
+  - 或在 VS Code 中按 `Cmd+P` / `Ctrl+P` 输入并回车：
+    ```text
+    ext install Angues.texel
+    ```
+  - 或在终端直接运行：
+    ```bash
+    code --install-extension Angues.texel
+    ```
+
+- **方式 B：安装打包好的 `.vsix`（离线安装）**
+  1. 前往本仓库右侧 **[Releases](https://github.com/Angues228/Texel/releases)** 页面下载最新的 `texel-v*.vsix` 文件。
   2. 在 VS Code 左侧打开 **扩展（Extensions）** 面板，点击右上角 `...` 菜单 → **`从 VSIX 安装...`（Install from VSIX...）**，选中下载的文件即可。
 
-- **方式 B：从源码本地编译或调试运行（适合开发者）**
+- **方式 C：从源码本地编译或调试运行（适合开发者）**
   ```bash
   git clone https://github.com/Angues228/Texel.git
   cd Texel
