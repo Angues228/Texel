@@ -91,7 +91,7 @@ PDF 上框选/划词标注 ──▶ SyncTeX 自动定位源码块 ──▶ AI 
 ### 3. 开始改稿（4 步完成一轮）
 
 1. 在 VS Code 中打开任意 `.tex` 文件。
-2. 点击编辑器右上角标题栏的 <img src="./media/icon.png" alt="Texel" width="18" height="18" align="absmiddle" /> **Texel 图标**（专属蓝框 `T` + 金色星芒，即使同时装了 LaTeX Workshop 绿色 `▷` 或 Code Runner 灰色 `▷` 也能一眼分辨），或按 `Cmd+Shift+P` / `Ctrl+Shift+P` 运行 **`Texel: 编译 LaTeX 并打开 PDF 工作区`**。如果你平时已通过 LaTeX Workshop 按 `Cmd+S` / `Ctrl+S` 自动编译好 PDF、只想秒开不重编，可直接运行 **`Texel: 打开 PDF 批注与 AI 工作区`**。
+2. 点击编辑器右上角标题栏的 <img src="./media/icon.png" alt="Texel" width="18" height="18" align="absmiddle" /> **Texel 图标**，或按 `Cmd+Shift+P` / `Ctrl+Shift+P` 运行 **`Texel: 编译 LaTeX 并打开 PDF 工作区`**。如果你平时已通过 LaTeX Workshop 按 `Cmd+S` / `Ctrl+S` 自动编译好 PDF、只想秒开不重编，可直接运行 **`Texel: 打开 PDF 批注与 AI 工作区`**。
 3. 在右侧 PDF 面板用 **Box** 拖框或 **Text** 划词标记需要修改的区域，在指令框输入要求（或直接点击下方的预设 Skill 按钮），点击 **`Run AI Revision`**。
 4. 在生成的 **Side-by-Side** / **Typeset Diff** 视图中核对排版效果，必要时点 **`View .tex Diff`** 查看源码差异；逐条点 **`✓ Accept`**（或填写反馈点 **`Revise with feedback`** 再改一轮），最后点 **`Apply accepted`** 自动写回 `.tex` 并重新编译。
 

@@ -91,7 +91,7 @@ Make sure `latexmk`, `synctex`, and `latexdiff` are available on your machine:
 ### 3. Revise a Paper in 4 Steps
 
 1. Open any `.tex` file in VS Code.
-2. Click the <img src="./media/icon.png" alt="Texel" width="18" height="18" align="absmiddle" /> **Texel icon** (blue selection-frame `T` + amber sparkle — visually distinct even alongside LaTeX Workshop's green `▷` or Code Runner's `▷`) in the editor title bar, or run **`Texel: Compile LaTeX & Open PDF Workspace`** from the Command Palette (`Cmd+Shift+P` / `Ctrl+Shift+P`). If you already auto-compile on save (`Cmd+S` / `Ctrl+S`) via LaTeX Workshop and want to open the existing PDF immediately without recompiling, run **`Texel: Open PDF Annotator & AI Workspace`**.
+2. Click the <img src="./media/icon.png" alt="Texel" width="18" height="18" align="absmiddle" /> **Texel icon** in the editor title bar, or run **`Texel: Compile LaTeX & Open PDF Workspace`** from the Command Palette (`Cmd+Shift+P` / `Ctrl+Shift+P`). If you already auto-compile on save (`Cmd+S` / `Ctrl+S`) via LaTeX Workshop and want to open the existing PDF immediately without recompiling, run **`Texel: Open PDF Annotator & AI Workspace`**.
 3. Use **Box** or **Text** mode to mark regions on the PDF, type an instruction or click a skill button, and click **`Run AI Revision`**.
 4. Inspect the **Side-by-Side** / **Typeset Diff** view (and **`View .tex Diff`** if desired), mark edits **`✓ Accept`** / **`✗ Reject`** (or add comments and run **`Revise with feedback`**), then click **`Apply accepted`** to save changes and recompile automatically.
 
