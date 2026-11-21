@@ -79,7 +79,9 @@ describe('TeX pipeline', { skip }, () => {
     try {
       assert.ok(fs.statSync(diff.afterPdfPath).size > 1000);
       assert.ok(fs.statSync(diff.diffPdfPath).size > 1000);
-      assert.equal(diff.usedDiffFallback, !hasLatexdiff);
+      const logPath = path.join(diff.workDir, 'sample.log');
+      const logTail = fs.existsSync(logPath) ? fs.readFileSync(logPath, 'utf8').slice(-800) : '';
+      assert.equal(diff.usedDiffFallback, !hasLatexdiff, `latexdiff compile fell back:\n${logTail}`);
       assert.equal(fs.readFileSync(tex, 'utf8').includes('(p c)^2'), false, 'original .tex was modified');
     } finally {
       fs.rmSync(diff.workDir, { recursive: true, force: true });

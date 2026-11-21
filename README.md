@@ -54,7 +54,7 @@ Make sure `latexmk`, `synctex`, and `latexdiff` are available on your machine:
 - **macOS**: Install [MacTeX](https://tug.org/mactex/) (binaries live in `/Library/TeX/texbin`, which Texel uses by default).
 - **Linux** (Ubuntu / Debian example):
   ```bash
-  sudo apt-get install latexmk texlive-latex-base texlive-latex-recommended latexdiff
+  sudo apt-get install latexmk texlive-latex-base texlive-latex-recommended texlive-plain-generic latexdiff
   ```
 - **Windows**: Install [TeX Live](https://tug.org/texlive/) or MiKTeX and make sure `latexmk`, `synctex`, and `latexdiff` are on your `PATH` (or set `texel.texBinPath` in User Settings).
 

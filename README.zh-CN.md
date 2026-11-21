@@ -54,7 +54,7 @@ PDF 上框选/划词标注 ──▶ SyncTeX 自动定位源码块 ──▶ AI 
 - **macOS**：安装 [MacTeX](https://tug.org/mactex/)（默认位于 `/Library/TeX/texbin`，Texel 开箱即用）。
 - **Linux**：以 Ubuntu / Debian 为例：
   ```bash
-  sudo apt-get install latexmk texlive-latex-base texlive-latex-recommended latexdiff
+  sudo apt-get install latexmk texlive-latex-base texlive-latex-recommended texlive-plain-generic latexdiff
   ```
 - **Windows**：安装 [TeX Live](https://tug.org/texlive/) 或 MiKTeX（需确保 `latexmk`、`synctex`、`latexdiff` 已在系统 `PATH` 中，或在设置里指定 `texel.texBinPath`）。
 
